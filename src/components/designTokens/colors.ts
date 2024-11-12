@@ -1,5 +1,3 @@
-// 1. Primitive Colors (ベースカラー)
-
 export const primitiveColors = {
   gray: {
     100: '#FFFFFF',
@@ -52,6 +50,103 @@ export const primitiveColors = {
   },
 } as const;
 
-// 2. Theme Colors (プリミティブカラーを参照)
+export const themeColors = {
+  neutral: {
+    100: primitiveColors.gray[100],
+    90: primitiveColors.gray[90],
+    80: primitiveColors.gray[80],
+    70: primitiveColors.gray[70],
+    60: primitiveColors.gray[60],
+    50: primitiveColors.gray[50],
+    40: primitiveColors.gray[40],
+    30: primitiveColors.gray[30],
+    20: primitiveColors.gray[20],
+    10: primitiveColors.gray[10],
+    5: primitiveColors.gray[5],
+  },
+  danger: {
+    90: primitiveColors.red[90],
+    80: primitiveColors.red[80],
+    70: primitiveColors.red[70],
+    60: primitiveColors.red[60],
+    50: primitiveColors.red[50],
+    40: primitiveColors.red[40],
+    30: primitiveColors.red[30],
+    20: primitiveColors.red[20],
+    10: primitiveColors.red[10],
+    5: primitiveColors.red[5],
+  },
+  primary: {
+    90: primitiveColors.blue[90],
+    80: primitiveColors.blue[80],
+    70: primitiveColors.blue[70],
+    60: primitiveColors.blue[60],
+    50: primitiveColors.blue[50],
+    40: primitiveColors.blue[40],
+    30: primitiveColors.blue[30],
+    20: primitiveColors.blue[20],
+    10: primitiveColors.blue[10],
+    5: primitiveColors.blue[5],
+  },
+  success: {
+    90: primitiveColors.green[90],
+    80: primitiveColors.green[80],
+    70: primitiveColors.green[70],
+    60: primitiveColors.green[60],
+    50: primitiveColors.green[50],
+    40: primitiveColors.green[40],
+    30: primitiveColors.green[30],
+    20: primitiveColors.green[20],
+    10: primitiveColors.green[10],
+    5: primitiveColors.green[5],
+  },
+} as const;
 
-// 3. Semantic Colors (テーマカラーを参照)
+export const semanticColors = {
+  semantic: {
+    dangerEnabled: themeColors.danger[40],
+    dangerHovered: themeColors.danger[30],
+    dangerPressed: themeColors.danger[10],
+    secondaryActionEnabled: themeColors.neutral[100],
+    secondaryActionHovered: themeColors.neutral[70],
+    secondaryActionPressed: themeColors.neutral[50],
+    primaryActionEnabled: themeColors.primary[40],
+    primaryActionHovered: themeColors.primary[30],
+    primaryActionPressed: themeColors.primary[10],
+  },
+  text: {
+    default: themeColors.neutral[5],
+    subtle: themeColors.neutral[30],
+    danger: themeColors.danger[30],
+    success: themeColors.success[30],
+    primaryAction: themeColors.neutral[100],
+    secondaryAction: themeColors.neutral[5],
+    dangerAction: themeColors.neutral[100],
+    placeholder: themeColors.neutral[40],
+  },
+  background: {
+    default: themeColors.neutral[90],
+    subtle: themeColors.neutral[80],
+    subler: themeColors.neutral[70],
+    pressed: themeColors.neutral[50],
+    progressPrimary: themeColors.neutral[30],
+    progressSecondary: themeColors.primary[50],
+    progressPrimaryTrack: themeColors.neutral[80],
+    progressSecondaryTrack: themeColors.primary[80],
+  },
+
+  border: {
+    default: themeColors.neutral[30],
+    subtle: themeColors.neutral[60],
+    bold: themeColors.neutral[20],
+    inverse: themeColors.neutral[90],
+    danger: themeColors.danger[30],
+    success: themeColors.success[30],
+    hovered: themeColors.primary[30],
+    focused: themeColors.primary[40],
+    dangerActionFocused: themeColors.primary[70],
+    primaryActionFocused: themeColors.primary[70],
+    secondaryActionFocused: themeColors.primary[70],
+    secondaryActionEnabled: themeColors.neutral[30],
+  },
+} as const;
