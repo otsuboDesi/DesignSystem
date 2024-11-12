@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react';
 import '../src/index.css';
+import { PaddingDecorator } from '../src/PaddingDecorator';
 
 const preview: Preview = {
   parameters: {
@@ -13,6 +14,7 @@ const preview: Preview = {
       default: false,
     },
   },
+  decorators: [PaddingDecorator],
 };
 
 export default preview;
