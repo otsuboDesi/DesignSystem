@@ -21,16 +21,12 @@ const ColorBlock = ({ color, name }: ColorBlockProps) => (
 
 export interface ColorPaletteProps {
   colors: Record<string, string>;
-  title?: string;
 }
 
-export const ColorPalette = ({ colors, title }: ColorPaletteProps) => (
-  <div className="space-y-4 max-w-5xl">
-    {title && <h5 className="text-[34px]">{title}</h5>}
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      {Object.entries(colors).map(([name, value]) => (
-        <ColorBlock key={name} color={value} name={`${name}`} />
-      ))}
-    </div>
+export const ColorPalette = ({ colors }: ColorPaletteProps) => (
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    {Object.entries(colors).map(([name, value]) => (
+      <ColorBlock key={name} color={value} name={`${name}`} />
+    ))}
   </div>
 );

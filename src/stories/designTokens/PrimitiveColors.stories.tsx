@@ -22,27 +22,23 @@ const flattenColors = (colorGroup: Record<string, string>) => {
 export const Gray: Story = {
   args: {
     colors: flattenColors(primitiveColors.gray),
-    title: 'Gray',
   },
 };
 
 export const Red: Story = {
   args: {
     colors: flattenColors(primitiveColors.red),
-    title: 'Red',
   },
 };
 
 export const Blue: Story = {
   args: {
     colors: flattenColors(primitiveColors.blue),
-    title: 'Blue',
   },
 };
 
 export const Green: Story = {
   args: {
     colors: flattenColors(primitiveColors.green),
-    title: 'Green',
   },
 };

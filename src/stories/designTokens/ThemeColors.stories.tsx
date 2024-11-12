@@ -22,27 +22,23 @@ const flattenColors = (colorGroup: Record<string, string>) => {
 export const Neutral: Story = {
   args: {
     colors: flattenColors(themeColors.neutral),
-    title: 'Neutral',
   },
 };
 
 export const Primary: Story = {
   args: {
     colors: flattenColors(themeColors.primary),
-    title: 'Primary',
   },
 };
 
 export const Danger: Story = {
   args: {
     colors: flattenColors(themeColors.danger),
-    title: 'Danger',
   },
 };
 
 export const Success: Story = {
   args: {
     colors: flattenColors(themeColors.success),
-    title: 'Success',
   },
 };

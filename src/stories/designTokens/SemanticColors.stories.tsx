@@ -22,27 +22,23 @@ const flattenColors = (colorGroup: Record<string, string>) => {
 export const Semantic: Story = {
   args: {
     colors: flattenColors(semanticColors.semantic),
-    title: 'Semantic',
   },
 };
 
 export const Text: Story = {
   args: {
     colors: flattenColors(semanticColors.text),
-    title: 'Text',
   },
 };
 
 export const Background: Story = {
   args: {
     colors: flattenColors(semanticColors.background),
-    title: 'Background',
   },
 };
 
 export const Border: Story = {
   args: {
     colors: flattenColors(semanticColors.border),
-    title: 'Border',
   },
 };
