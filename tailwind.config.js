@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Noto Sans', 'Roboto', 'sans-serif'],
+        sans: ['Roboto', 'Noto Sans', 'sans-serif'],
       },
     },
   },
