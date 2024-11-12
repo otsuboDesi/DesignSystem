@@ -1,3 +1,5 @@
+import { semanticColors } from './colors';
+
 interface ColorBlockProps {
   color: string;
   name: string;
@@ -6,7 +8,7 @@ interface ColorBlockProps {
 const ColorBlock = ({ color, name }: ColorBlockProps) => (
   <div className="flex items-start gap-2 p-2">
     <div
-      className="w-16 h-16 rounded shadow-sm"
+      className={`w-16 h-16 rounded border border-[${semanticColors.border.default}] `}
       style={{ backgroundColor: color }}
     />
 
@@ -23,9 +25,9 @@ export interface ColorPaletteProps {
 }
 
 export const ColorPalette = ({ colors, title }: ColorPaletteProps) => (
-  <div className="space-y-4">
-    {title && <h5 className="text-[34px] font-bold">{title}</h5>}
-    <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-4">
+  <div className="space-y-4 max-w-5xl">
+    {title && <h5 className="text-[34px]">{title}</h5>}
+    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
       {Object.entries(colors).map(([name, value]) => (
         <ColorBlock key={name} color={value} name={`${name}`} />
       ))}
