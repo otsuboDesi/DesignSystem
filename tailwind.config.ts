@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import { semanticColors } from './src/components/designTokens/colors';
+import { semanticColors } from './src/components/designTokens/colors'
 
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -57,8 +57,19 @@ module.exports = {
           dangerAction: semanticColors.text.dangerAction,
           placeholder: semanticColors.text.placeholder,
         },
+        background: {
+          default: semanticColors.background.default,
+          subtle: semanticColors.background.subtle,
+          subler: semanticColors.background.subler,
+          pressed: semanticColors.background.pressed,
+          progressPrimary: semanticColors.background.progressPrimary,
+          progressPrimaryTrack: semanticColors.background.progressPrimaryTrack,
+          progressSecondary: semanticColors.background.progressSecondary,
+          progressSecondaryTrack:
+            semanticColors.background.progressSecondaryTrack,
+        },
       },
     },
   },
   plugins: [],
-};
+}
