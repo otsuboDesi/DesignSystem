@@ -9,6 +9,10 @@ const meta = {
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
+    controls: {
+      disable: true,
+      hideNoControlsWarning: true,
+    },
   },
 } satisfies Meta<typeof ColorPalette>;
 
