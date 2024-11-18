@@ -14,12 +14,18 @@ const meta = {
     size: {
       control: 'select',
       options: ['xxl', 'xl', 'lg', 'md', 'sm'],
-      description: 'サイズを選択',
+      description:
+        'サイズ設定\n' +
+        '- xxl: 100px - ページ全体で使用\n' +
+        '- xl: 48px - セクションなどで使用\n' +
+        '- lg: 24px - アイコンlgと同様のサイズ\n' +
+        '- md: 20px - アイコンmdと同様のサイズ、md・lgサイズのボタンなどで使用\n' +
+        '- sm: 16px - アイコンsmと同様のサイズ、smサイズのボタンなどで使用',
     },
     variant: {
       control: 'radio',
       options: ['primary', 'secondary'],
-      description: 'バリアントを選択',
+      description: 'バリアント設定、基本的にはprimaryを使用 ',
     },
   },
   parameters: {
