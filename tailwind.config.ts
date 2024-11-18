@@ -2,7 +2,12 @@
 import { semanticColors } from './src/components/designTokens/colors';
 
 module.exports = {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+    './src/stories/**/*.{js,jsx,ts,tsx}',
+    './.storybook/**/*.{js,jsx,ts,tsx}',
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -57,6 +62,15 @@ module.exports = {
           dangerAction: semanticColors.text.dangerAction,
           placeholder: semanticColors.text.placeholder,
         },
+      },
+      spacing: {
+        xxxl: '64px',
+        xxl: '48px',
+        xl: '32px',
+        lg: '24px',
+        md: '16px',
+        sm: '12px',
+        xs: '8px',
       },
     },
   },
