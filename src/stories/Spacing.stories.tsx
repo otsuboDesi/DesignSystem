@@ -1,11 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import classNames from 'classnames';
+import type { Meta, StoryObj } from '@storybook/react'
+import classNames from 'classnames'
 
-import { Typography } from '../components/designTokens/Typography';
+import { Typography } from '../components/designTokens/Typography'
+
+type ISpacingType = 'xxxl' | 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs'
 
 interface SpacingBoxProps {
-  caption: string;
-  size: 'xxxl' | 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
+  caption: string
+  size: ISpacingType
 }
 
 const SpacingBox = ({ caption, size }: SpacingBoxProps) => {
@@ -17,21 +19,23 @@ const SpacingBox = ({ caption, size }: SpacingBoxProps) => {
     md: 'h-md',
     sm: 'h-sm',
     xs: 'h-xs',
-  };
+  }
 
   return (
     <div className="flex flex-col justify-end items-center">
-      <div className={classNames('w-24 bg-red-300', heightClass[size])} />
-      <Typography variant="body-lg-bold" color="default">
+      <div
+        className={classNames('w-24 bg-background-subler', heightClass[size])}
+      />
+      <Typography variant="body-md" color="default">
         {caption}
       </Typography>
     </div>
-  );
-};
+  )
+}
 
 const meta = {
   title: 'Design Tokens/Spacing',
-  component: Typography,
+  component: SpacingBox,
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
@@ -40,10 +44,10 @@ const meta = {
       hideNoControlsWarning: true,
     },
   },
-} satisfies Meta<typeof Typography>;
+} satisfies Meta<typeof SpacingBox>
 
-export default meta;
-type Story = StoryObj<typeof Typography>;
+export default meta
+type Story = StoryObj<typeof SpacingBox>
 
 export const Spacing: Story = {
   render: () => (
@@ -57,4 +61,4 @@ export const Spacing: Story = {
       <SpacingBox caption="xs (8px)" size="xs" />
     </div>
   ),
-};
+}
