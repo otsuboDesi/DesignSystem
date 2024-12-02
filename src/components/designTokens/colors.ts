@@ -17,12 +17,12 @@ export const primitiveColors = {
     80: '#FCDADA',
     70: '#F9B4B4',
     60: '#F58F8F',
-    50: '#F26969',
-    40: '#EF4444',
-    30: '#C13737',
-    20: '#932929',
-    10: '#661C1C',
-    5: '#4F1515',
+    50: '#F96C6C',
+    40: '#F50A0A',
+    30: '#DD0307',
+    20: '#BC0A0A',
+    10: '#930606',
+    5: '#620404',
   },
   blue: {
     90: '#EEFAFF',
@@ -38,17 +38,17 @@ export const primitiveColors = {
   },
   green: {
     90: '#F1FEF8',
-    80: '#C4F0DB',
-    70: '#97E2BF',
-    60: '#6AD3A2',
-    50: '#3DC586',
-    40: '#10B769',
-    30: '#0D9254',
-    20: '#0A6E3F',
-    10: '#06492A',
-    5: '#053720',
+    80: '#CDFDE6',
+    70: '#A2F1CC',
+    60: '#75E6B1',
+    50: '#4CCF92',
+    40: '#2DC27C',
+    30: '#0EB466',
+    20: '#0B9052',
+    10: '#086C3D',
+    5: '#064829',
   },
-} as const;
+} as const
 
 export const themeColors = {
   neutral: {
@@ -100,20 +100,9 @@ export const themeColors = {
     10: primitiveColors.green[10],
     5: primitiveColors.green[5],
   },
-} as const;
+} as const
 
 export const semanticColors = {
-  semantic: {
-    dangerEnabled: themeColors.danger[40],
-    dangerHovered: themeColors.danger[30],
-    dangerPressed: themeColors.danger[10],
-    secondaryActionEnabled: themeColors.neutral[100],
-    secondaryActionHovered: themeColors.neutral[70],
-    secondaryActionPressed: themeColors.neutral[50],
-    primaryActionEnabled: themeColors.primary[40],
-    primaryActionHovered: themeColors.primary[30],
-    primaryActionPressed: themeColors.primary[10],
-  },
   text: {
     default: themeColors.neutral[5],
     subtle: themeColors.neutral[30],
@@ -129,6 +118,15 @@ export const semanticColors = {
     subtle: themeColors.neutral[80],
     subler: themeColors.neutral[70],
     pressed: themeColors.neutral[50],
+    primaryActionEnabled: themeColors.primary[40],
+    primaryActionHovered: themeColors.primary[30],
+    primaryActionPressed: themeColors.primary[10],
+    secondaryActionEnabled: themeColors.neutral[100],
+    secondaryActionHovered: themeColors.neutral[70],
+    secondaryActionPressed: themeColors.neutral[50],
+    dangerEnabled: themeColors.danger[40],
+    dangerHovered: themeColors.danger[30],
+    dangerPressed: themeColors.danger[10],
     progressPrimary: themeColors.neutral[30],
     progressSecondary: themeColors.primary[50],
     progressPrimaryTrack: themeColors.neutral[80],
@@ -149,4 +147,4 @@ export const semanticColors = {
     secondaryActionFocused: themeColors.primary[70],
     secondaryActionEnabled: themeColors.neutral[30],
   },
-} as const;
+} as const
