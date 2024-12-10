@@ -21,17 +21,16 @@ const meta: Meta<typeof TextField> = {
       control: { type: 'select' },
       options: ['sm', 'md'],
     },
-    status: {
-      control: { type: 'select' },
-      options: ['default', 'disabled', 'focused', 'hovered', 'filled'],
+    disabled: {
+      control: { type: 'boolean' },
+    },
+    isError: {
+      control: { type: 'boolean' },
+    },
+    errorMessage: {
+      control: { type: 'text' },
     },
     readOnly: {
-      control: { type: 'boolean' },
-    },
-    required: {
-      control: { type: 'boolean' },
-    },
-    disabled: {
       control: { type: 'boolean' },
     },
   },
@@ -45,9 +44,11 @@ export const Default: Story = {
     type: 'text',
     size: 'md',
     placeholder: 'Placeholder text',
-    status: 'default',
+    disabled: false,
+    isError: false,
+    errorMessage: 'エラーテキスト',
     readOnly: false,
-    required: false,
+    // required: false,
   },
 }
 
@@ -56,9 +57,11 @@ export const Password: Story = {
     type: 'password',
     size: 'md',
     placeholder: 'password',
-    status: 'default',
+    disabled: false,
+    isError: false,
+    errorMessage: 'パスワードが正しくありません',
     readOnly: false,
-    required: false,
+    // required: false,
   },
   render: (args) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -79,10 +82,14 @@ export const Email: Story = {
     type: 'email',
     size: 'md',
     placeholder: 'test@sample.com',
-    status: 'default',
+    disabled: false,
+    isError: false,
+    errorMessage: '既に登録されているメールアドレスです',
+    readOnly: false,
   },
   render: (args) => (
     <TextField
+      {...args}
       placeholder={args.placeholder}
       endIcon={
         <EmailIcon
@@ -99,10 +106,14 @@ export const Tel: Story = {
     type: 'tel',
     size: 'md',
     placeholder: '09012345678',
-    status: 'default',
+    disabled: false,
+    isError: false,
+    errorMessage: 'ハイフンなし、半角英数で入力してください',
+    readOnly: false,
   },
   render: (args) => (
     <TextField
+      {...args}
       placeholder={args.placeholder}
       endIcon={
         <PhoneIcon
@@ -119,6 +130,9 @@ export const Number: Story = {
     type: 'number',
     size: 'md',
     placeholder: '0',
-    status: 'default',
+    disabled: false,
+    isError: false,
+    errorMessage: '半角英数で入力してください',
+    readOnly: false,
   },
 }
