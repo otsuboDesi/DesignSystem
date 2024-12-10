@@ -9,4 +9,7 @@ body {
   background-color: #f8f8f8; /* gray-90 */
   font-family: 'Noto Sans JP', sans-serif;
   color: #1f1f1f; /* text gray-5 */
+  :focus-visible {
+    outline: none;
+  }
 }

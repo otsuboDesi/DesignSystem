@@ -1,8 +1,9 @@
+import { IIconSize } from '../@interface/icons'
 import { semanticColors } from '../components/designTokens/colors'
 
 interface SearchIconProps {
   color?: string
-  size?: 'lg' | 'md' | 'sm'
+  size?: IIconSize
 }
 
 export const SearchIcon = ({
