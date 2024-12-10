@@ -13,9 +13,9 @@ export const CircularProgress = ({
 }: CircluarProgressProps) => {
   const variantClass = {
     primary:
-      'border-background-progressPrimary border-t-background-progressPrimaryTrack',
+      'border-backgroundProgressPrimary border-t-backgroundProgressPrimaryTrack',
     secondary:
-      'border-background-progressSecondary border-t-background-progressSecondaryTrack',
+      'border-backgroundProgressSecondary border-t-backgroundProgressSecondaryTrack',
   }
 
   const sizeClass = {
