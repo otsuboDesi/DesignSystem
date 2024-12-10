@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Roboto', 'Noto Sans', 'sans-serif'],
+        sans: ['Noto Sans JP', 'sans-serif'],
       },
       fontSize: {
         h1: '83px',
@@ -47,27 +47,56 @@ module.exports = {
         5: '0.27px',
       },
       colors: {
-        text: {
-          default: semanticColors.text.default,
-          subtle: semanticColors.text.subtle,
-          danger: semanticColors.text.danger,
-          success: semanticColors.text.success,
-          primaryAction: semanticColors.text.primaryAction,
-          secondaryAction: semanticColors.text.secondaryAction,
-          dangerAction: semanticColors.text.dangerAction,
-          placeholder: semanticColors.text.placeholder,
-        },
-        background: {
-          default: semanticColors.background.default,
-          subtle: semanticColors.background.subtle,
-          subler: semanticColors.background.subler,
-          pressed: semanticColors.background.pressed,
-          progressPrimary: semanticColors.background.progressPrimary,
-          progressPrimaryTrack: semanticColors.background.progressPrimaryTrack,
-          progressSecondary: semanticColors.background.progressSecondary,
-          progressSecondaryTrack:
-            semanticColors.background.progressSecondaryTrack,
-        },
+        textDefault: semanticColors.text.default,
+        textSubtle: semanticColors.text.subtle,
+        textDanger: semanticColors.text.danger,
+        textSuccess: semanticColors.text.success,
+        textPrimaryAction: semanticColors.text.primaryAction,
+        textSecondaryAction: semanticColors.text.secondaryAction,
+        textDangerAction: semanticColors.text.dangerAction,
+        textPlaceholder: semanticColors.text.placeholder,
+
+        backgroundDefault: semanticColors.background.default,
+        backgroundSubtle: semanticColors.background.subtle,
+        backgroundSubler: semanticColors.background.subler,
+        backgroundPressed: semanticColors.background.pressed,
+        backgroundPrimaryActionEnabled:
+          semanticColors.background.primaryActionEnabled,
+        backgroundPrimaryActionHovered:
+          semanticColors.background.primaryActionHovered,
+        backgroundPrimaryActionPressed:
+          semanticColors.background.primaryActionPressed,
+        backgroundSecondaryActionEnabled:
+          semanticColors.background.secondaryActionEnabled,
+        backgroundSecondaryActionHovered:
+          semanticColors.background.secondaryActionHovered,
+        backgroundSecondaryActionPressed:
+          semanticColors.background.secondaryActionPressed,
+        backgroundDangerEnabled: semanticColors.background.dangerEnabled,
+        backgroundDangerHovered: semanticColors.background.dangerHovered,
+        backgroundDangerPressed: semanticColors.background.dangerPressed,
+        backgroundProgressPrimary: semanticColors.background.progressPrimary,
+        backgroundProgressPrimaryTrack:
+          semanticColors.background.progressPrimaryTrack,
+        backgroundProgressSecondary:
+          semanticColors.background.progressSecondary,
+        backgroundProgressSecondaryTrack:
+          semanticColors.background.progressSecondaryTrack,
+
+        borderDefault: semanticColors.border.default,
+        borderSubtle: semanticColors.border.subtle,
+        borderBold: semanticColors.border.bold,
+        borderInverse: semanticColors.border.inverse,
+        borderDanger: semanticColors.border.danger,
+        borderSuccess: semanticColors.border.success,
+        borderHovered: semanticColors.border.hovered,
+        borderFocused: semanticColors.border.focused,
+        borderDangerActionFocused: semanticColors.border.dangerActionFocused,
+        borderPrimaryActionFocused: semanticColors.border.primaryActionFocused,
+        borderSecondaryActionFocused:
+          semanticColors.border.secondaryActionFocused,
+        borderSecondaryActionEnabled:
+          semanticColors.border.secondaryActionEnabled,
       },
     },
   },
