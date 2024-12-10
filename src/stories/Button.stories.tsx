@@ -113,7 +113,7 @@ export const StartIconButton: Story = {
   },
 }
 
-export const WithEndIconButton: Story = {
+export const EndIconButton: Story = {
   render: Template,
   args: {
     endIcon: true,
