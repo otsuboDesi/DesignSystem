@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { TextField } from '../components/TextField'
 import { useState } from 'react'
-import { SearchIcon } from '../icons/SearchIcon'
 import { semanticColors } from '../components/designTokens/colors'
+import { EmailIcon } from '../icons/EmailIcon'
+import { PhoneIcon } from '../icons/PhoneIcon'
 
 const meta: Meta<typeof TextField> = {
   title: 'Components/TextField',
@@ -15,41 +16,23 @@ const meta: Meta<typeof TextField> = {
     type: {
       control: { type: 'select' },
       options: ['text', 'password', 'tel', 'number', 'email'],
-      description: 'Type of the input field',
     },
     size: {
       control: { type: 'select' },
       options: ['sm', 'md'],
-      description: 'Size of the input field',
     },
     status: {
       control: { type: 'select' },
       options: ['default', 'disabled', 'focused', 'hovered', 'filled'],
-      description: 'Visual status of the input field',
     },
     readOnly: {
       control: { type: 'boolean' },
-      description: 'Whether the field is read-only',
     },
     required: {
       control: { type: 'boolean' },
-      description: 'Whether the field is required',
     },
     disabled: {
       control: { type: 'boolean' },
-      description: 'Whether the field is disabled',
-    },
-    hasEndIcon: {
-      control: { type: 'boolean' },
-      description: 'Whether the field has an end icon',
-    },
-    showPassword: {
-      control: { type: 'boolean' },
-      description: 'Whether the password is visible (for password fields)',
-    },
-    onClickVisibleIcon: {
-      action: 'onClickVisibleIcon',
-      description: 'Callback to toggle password visibility',
     },
   },
 }
@@ -65,7 +48,6 @@ export const Default: Story = {
     status: 'default',
     readOnly: false,
     required: false,
-    hasEndIcon: false,
   },
 }
 
@@ -73,20 +55,19 @@ export const Password: Story = {
   args: {
     type: 'password',
     size: 'md',
-    placeholder: 'Enter password',
+    placeholder: 'password',
     status: 'default',
     readOnly: false,
     required: false,
-    hasEndIcon: true,
   },
   render: (args) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [showPassword, setShowPassword] = useState(false)
-
     return (
       <TextField
         {...args}
         type={showPassword ? 'text' : 'password'}
+        showPassword={showPassword}
         onClickVisibleIcon={() => setShowPassword(!showPassword)}
       />
     )
@@ -97,20 +78,39 @@ export const Email: Story = {
   args: {
     type: 'email',
     size: 'md',
-    placeholder: 'Enter email',
+    placeholder: 'test@sample.com',
     status: 'default',
-    hasEndIcon: true,
   },
   render: (args) => (
-    <div>
-      <input type={args.type} placeholder={args.placeholder} />
-      {args.hasEndIcon && (
-        <SearchIcon
+    <TextField
+      placeholder={args.placeholder}
+      endIcon={
+        <EmailIcon
           size={args.size === 'md' ? 'lg' : 'md'}
           color={semanticColors.text.default}
         />
-      )}
-    </div>
+      }
+    />
+  ),
+}
+
+export const Tel: Story = {
+  args: {
+    type: 'tel',
+    size: 'md',
+    placeholder: '09012345678',
+    status: 'default',
+  },
+  render: (args) => (
+    <TextField
+      placeholder={args.placeholder}
+      endIcon={
+        <PhoneIcon
+          size={args.size === 'md' ? 'lg' : 'md'}
+          color={semanticColors.text.default}
+        />
+      }
+    />
   ),
 }
 
@@ -118,18 +118,7 @@ export const Number: Story = {
   args: {
     type: 'number',
     size: 'md',
-    placeholder: 'Enter number',
+    placeholder: '0',
     status: 'default',
-    hasEndIcon: true,
-  },
-}
-
-export const Tel: Story = {
-  args: {
-    type: 'tel',
-    size: 'md',
-    placeholder: 'Enter phone number',
-    status: 'default',
-    hasEndIcon: true,
   },
 }
