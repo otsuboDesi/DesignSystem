@@ -33,6 +33,8 @@ const meta: Meta<typeof TextField> = {
     readOnly: {
       control: { type: 'boolean' },
     },
+    showPassword: { table: { disable: true } },
+    onClickVisibleIcon: { table: { disable: true } },
   },
 }
 
@@ -63,6 +65,7 @@ export const Password: Story = {
     readOnly: false,
     // required: false,
   },
+
   render: (args) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [showPassword, setShowPassword] = useState(false)
@@ -87,6 +90,7 @@ export const Email: Story = {
     errorMessage: '既に登録されているメールアドレスです',
     readOnly: false,
   },
+
   render: (args) => (
     <TextField
       {...args}
@@ -111,6 +115,7 @@ export const Tel: Story = {
     errorMessage: 'ハイフンなし、半角英数で入力してください',
     readOnly: false,
   },
+
   render: (args) => (
     <TextField
       {...args}
