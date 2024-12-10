@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-
 import { TextField } from '../components/TextField'
 import { useState } from 'react'
+import { SearchIcon } from '../icons/SearchIcon'
+import { semanticColors } from '../components/designTokens/colors'
 
-const meta = {
+const meta: Meta<typeof TextField> = {
   title: 'Components/TextField',
   component: TextField,
   tags: ['autodocs'],
@@ -12,37 +13,38 @@ const meta = {
   },
   argTypes: {
     type: {
-      control: 'select',
+      control: { type: 'select' },
       options: ['text', 'password', 'tel', 'number', 'email'],
       description: 'Type of the input field',
     },
     size: {
-      control: 'select',
+      control: { type: 'select' },
       options: ['sm', 'md'],
       description: 'Size of the input field',
     },
     status: {
-      control: 'select',
+      control: { type: 'select' },
       options: ['default', 'disabled', 'focused', 'hovered', 'filled'],
       description: 'Visual status of the input field',
     },
     readOnly: {
-      control: 'boolean',
+      control: { type: 'boolean' },
       description: 'Whether the field is read-only',
     },
     required: {
-      control: 'boolean',
+      control: { type: 'boolean' },
       description: 'Whether the field is required',
     },
     disabled: {
-      control: 'boolean',
+      control: { type: 'boolean' },
+      description: 'Whether the field is disabled',
     },
     hasEndIcon: {
-      control: 'boolean',
+      control: { type: 'boolean' },
       description: 'Whether the field has an end icon',
     },
     showPassword: {
-      control: 'boolean',
+      control: { type: 'boolean' },
       description: 'Whether the password is visible (for password fields)',
     },
     onClickVisibleIcon: {
@@ -50,7 +52,7 @@ const meta = {
       description: 'Callback to toggle password visibility',
     },
   },
-} satisfies Meta<typeof TextField>
+}
 
 export default meta
 type Story = StoryObj<typeof TextField>
@@ -59,7 +61,7 @@ export const Default: Story = {
   args: {
     type: 'text',
     size: 'md',
-    placeholder: 'place holdere',
+    placeholder: 'Placeholder text',
     status: 'default',
     readOnly: false,
     required: false,
@@ -71,7 +73,7 @@ export const Password: Story = {
   args: {
     type: 'password',
     size: 'md',
-    placeholder: 'password',
+    placeholder: 'Enter password',
     status: 'default',
     readOnly: false,
     required: false,
@@ -95,32 +97,38 @@ export const Email: Story = {
   args: {
     type: 'email',
     size: 'md',
-    placeholder: 'Search...',
+    placeholder: 'Enter email',
     status: 'default',
     hasEndIcon: true,
-    endIcon: (
-      <span role="img" aria-label="email-icon">
-        🔍
-      </span>
-    ),
   },
+  render: (args) => (
+    <div>
+      <input type={args.type} placeholder={args.placeholder} />
+      {args.hasEndIcon && (
+        <SearchIcon
+          size={args.size === 'md' ? 'lg' : 'md'}
+          color={semanticColors.text.default}
+        />
+      )}
+    </div>
+  ),
 }
 
 export const Number: Story = {
   args: {
     type: 'number',
     size: 'md',
-    placeholder: 'Search...',
+    placeholder: 'Enter number',
     status: 'default',
     hasEndIcon: true,
   },
 }
 
-export const Tell: Story = {
+export const Tel: Story = {
   args: {
     type: 'tel',
     size: 'md',
-    placeholder: 'Search...',
+    placeholder: 'Enter phone number',
     status: 'default',
     hasEndIcon: true,
   },

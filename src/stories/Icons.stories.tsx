@@ -1,50 +1,66 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { StoryObj } from '@storybook/react'
 
 import { semanticColors } from '../components/designTokens/colors'
 import { IconLabel } from '../components/designTokens/IconLabel'
-import { IconList } from '../components/IconList'
 import { EmailIcon } from '../icons/EmailIcon'
 import { PhoneIcon } from '../icons/PhoneIcon'
 import { SearchIcon } from '../icons/SearchIcon'
 import { VisiblityOffIcon } from '../icons/VisiblityOffIcon'
 import { VisiblityOnIcon } from '../icons/VisiblityOnIcon'
 import { WarningIcon } from '../icons/WarningIcon'
+import { IIconSize, ISemanticColor } from '../@interface/icons'
 
 const meta = {
   title: 'Design Tokens/IconList',
-  component: IconList,
   tags: ['autodocs'],
+  args: {
+    size: 'lg',
+    color: semanticColors.text.default,
+  },
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['lg', 'md', 'sm'],
+      description: '',
+    },
+    color: {
+      control: 'select',
+      options: Object.keys(semanticColors.text),
+      description: '',
+    },
+  },
   parameters: {
     layout: 'fullscreen',
   },
-} satisfies Meta<typeof IconList>
+}
 
 export default meta
-type Story = StoryObj<typeof IconList>
+type Story = StoryObj<{ size: IIconSize; color: ISemanticColor }>
 
 export const Icons: Story = {
-  render: () => (
-    <IconList>
+  render: ({ size, color }) => {
+    const selectedColor = semanticColors.text[color]
+    return (
       <div className="flex flex-col gap-5">
         <IconLabel iconName="EmailIcon">
-          <EmailIcon size="lg" color={semanticColors.text.default} />
+          <EmailIcon size={size} color={selectedColor} />
         </IconLabel>
         <IconLabel iconName="PhoneIcon">
-          <PhoneIcon size="lg" color={semanticColors.text.default} />
+          <PhoneIcon size={size} color={selectedColor} />
         </IconLabel>
         <IconLabel iconName="SearchIcon">
-          <SearchIcon size="lg" color={semanticColors.text.default} />
+          <SearchIcon size={size} color={selectedColor} />
         </IconLabel>
         <IconLabel iconName="VisiblityOffIcon">
-          <VisiblityOffIcon size="lg" color={semanticColors.text.default} />
+          <VisiblityOffIcon size={size} color={selectedColor} />
         </IconLabel>
         <IconLabel iconName="VisiblityOnIcon">
-          <VisiblityOnIcon size="lg" color={semanticColors.text.default} />
+          <VisiblityOnIcon size={size} color={selectedColor} />
         </IconLabel>
         <IconLabel iconName="WarningIcon">
-          <WarningIcon size="lg" color={semanticColors.text.default} />
+          <WarningIcon size={size} color={selectedColor} />
         </IconLabel>
       </div>
-    </IconList>
-  ),
+    )
+  },
 }
